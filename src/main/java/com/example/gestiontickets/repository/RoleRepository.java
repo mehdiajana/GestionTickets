@@ -4,5 +4,5 @@ import com.example.gestiontickets.models.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RoleRepository extends JpaRepository<Role, Long> {
-    Role findByName(String Name);
+    Role findRoleByName(String Name);
 }

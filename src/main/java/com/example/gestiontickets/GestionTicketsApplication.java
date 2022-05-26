@@ -23,22 +23,6 @@ public class GestionTicketsApplication {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    CommandLineRunner run(UserService userService)
-    {
-        return args -> {
-            userService.saveRole(new Role(null, "USER"));
-            userService.saveRole(new Role(null, "DEV"));
-            userService.saveRole(new Role(null, "ADMIN"));
 
-
-            userService.saveUser(new User(0L,"Ajana","mehdiajana","Mehdi","mehdi5ajana@gmail.com","1234" ));
-            userService.saveUser(new User(0L,"Bissaoui","yassino","Yassine","yassine.bissaoui@gmail.com","000000" ));
-
-            userService.addRoleToUser("mehdiajana","ADMIN");
-            userService.addRoleToUser("yassino","DEV");
-            userService.addRoleToUser("yassino","USER");
-        };
-    }
 
 }

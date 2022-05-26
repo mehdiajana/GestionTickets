@@ -3,6 +3,8 @@ package com.example.gestiontickets.models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import net.bytebuddy.implementation.bind.MethodDelegationBinder;
+import org.hibernate.annotations.Columns;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,8 +20,10 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nom;
+    @Column(unique=true)
     private String username;
     private String prenom;
+    @Column(unique=true)
     private String email;
     private String password;
     @ManyToMany(fetch = FetchType.LAZY)
